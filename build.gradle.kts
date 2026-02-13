@@ -2,16 +2,5 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
-}
-
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        // Add this dependency for the Safe Args plugin
-        val nav_version = "2.7.7" // Ensure this version matches your other navigation dependencies
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
-    }
+    alias(libs.plugins.navigation.safeargs.kotlin) apply false
 }

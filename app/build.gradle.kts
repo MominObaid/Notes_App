@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     id("kotlin-parcelize")
-    id("androidx.navigation.safeargs.kotlin")
+    alias(libs.plugins.navigation.safeargs.kotlin)
 }
 
 android {
@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.activity.v190)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
