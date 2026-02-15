@@ -52,7 +52,6 @@ class NotesFragment : Fragment(R.layout.fragment_notes) {
         if (noteTitle.isNotEmpty()){
             val note = Note(0,noteTitle,noteBody)
             notesViewModel.addNote(note)
-
             Toast.makeText(mView.context, "Note Saved successfully", Toast.LENGTH_SHORT).show()
 
             view.findNavController().navigate(R.id.action_newNotesFragment_to_homeFragment)
@@ -61,16 +60,10 @@ class NotesFragment : Fragment(R.layout.fragment_notes) {
         }
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         menu.clear()
         inflater.inflate(R.menu.menu_new_note, menu)
         super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -80,5 +73,10 @@ class NotesFragment : Fragment(R.layout.fragment_notes) {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

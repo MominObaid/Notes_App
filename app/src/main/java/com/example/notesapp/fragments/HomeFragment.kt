@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavHostController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -27,16 +28,10 @@ HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextListener 
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-//    private lateinit var notesViewModel: NoteViewModel
     private lateinit var noteAdapter: NoteAdapter
 
 
-    private val notesViewModel: NoteViewModel by activityViewModels {   //modified code
-        NoteViewModelFactory(
-            requireActivity().application,
-            NoteRepository(NoteDatabase.getInstance(requireContext()))
-        )
-    }
+    private val notesViewModel: NoteViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,14 +45,10 @@ HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        // In your Activity's onCreate() method
-        val navHostFragment = NavHostFragment.findNavController(this) as NavHostFragment
-        val navController = navHostFragment.navController
-
-        binding.fabAddNote.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_newNotesFragment)
-        }
-
+//        // In your Activity's onCreate() method
+//        val navHostFragment = NavHostFragment.findNavController(this) as NavHostController
+//        val navController = navHostFragment.navigate(R.id.homeFragment)
+//
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -65,16 +56,21 @@ HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextListener 
 //        notesViewModel = (activity as MainActivity).noteViewModel //original code
 
         setupRecyclerView()
+        setupObservers()
 
+        binding.fabAddNote.setOnClickListener {
+            it.findNavController().navigate(
+                R.id.action_homeFragment_to_newNotesFragment
+            )
+        }
+    }
 
-//        binding.fabAddNote.setOnClickListener {
-//            it.findNavController().navigate(
-//                R.id.action_homeFragment_to_newNotesFragment
-//            )
-//        }
-
-
-
+    private fun setupObservers() {
+        notesViewModel.getAllNotes().observe(viewLifecycleOwner){
+            notes ->
+            noteAdapter.differ.submitList(notes)
+            updateUI(notes)
+        }
     }
 
     private fun setupRecyclerView() {
@@ -87,21 +83,6 @@ HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextListener 
             setHasFixedSize(true)
             adapter = noteAdapter
         }
-        //modified
-        notesViewModel.getAllNotes().observe(viewLifecycleOwner){notes ->
-            noteAdapter.differ.submitList(notes)
-            updateUI(notes)
-    }
-
-
-//        activity.let {  //original
-//            notesViewModel.getAllNotes().observe(
-//                viewLifecycleOwner, { notes ->
-//                    noteAdapter.differ.submitList(notes)
-//                    updateUI(notes)
-//                }
-//            )
-//        }
     }
 
     fun updateUI(note: List<Note>?) {
