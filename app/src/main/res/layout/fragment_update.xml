@@ -66,10 +66,10 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="24dp"
         app:borderWidth="0dp"
-        android:tintMode="@color/white"
+        android:tintMode="@color/design_default_color_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/design_default_color_primary"
         android:src="@drawable/outline_done_outline_24"
         android:contentDescription="bersyte"
         />
