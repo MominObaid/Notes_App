@@ -53,3 +53,32 @@ View: Fragments and XML layouts that display data.
 ViewModel: Acts as a bridge, holding data for the UI and communicating with the Repository.
 
 Model: The Room Database and Repository that handle data logic.
+
+
+
+
+
+
+
+
+
+<img src ="https://github.com/user-attachments/assets/07c7be05-2aa3-4837-9799-4f4fee5fda54" width="350" vspace="30">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
