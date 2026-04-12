@@ -49,7 +49,9 @@ XML for layout designing
 
 Lifecycle Management: LiveData & ViewModel
 
-Architecture Overview
+**Architecture Overview**
+
+
 The app is structured into three layers:
 
 View: Fragments and XML layouts that display data.
