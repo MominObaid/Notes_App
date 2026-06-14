@@ -37,7 +37,7 @@ Architecture: MVVM (Model-View-ViewModel)
 
 Database: Room Persistence Library (SQLite abstraction)
 
-UI Components:
+**UI Components:**
 
 RecyclerView for the note list
 
