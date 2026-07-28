@@ -17,7 +17,7 @@ Modern UI: Built with XML, CardViews, and a sleek Menu Bar for navigation.
 
 Dynamic Lists: Uses RecyclerView for smooth scrolling and efficient data handling.
 
-Fragment-based Navigation: Optimized for performance and smooth transitions.
+Fragment-based Navigation: Optimized for performance and smooth transition.
 
 
 
