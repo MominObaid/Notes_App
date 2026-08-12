@@ -21,9 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         setUpViewModel()
-
     }
-
     fun setUpViewModel() {
         val noteRepository = NoteRepository(NoteDatabase.getInstance(this))
         val noteViewModelFactory = NoteViewModelFactory(application, noteRepository)
