@@ -20,7 +20,6 @@ Fragment-based Navigation: Optimized for performance and smooth transition.
 
 
 
-
 **🛠 Tech Stack & Architecture**
 
 
