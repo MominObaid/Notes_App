@@ -1,5 +1,5 @@
 
-**📝 MyNotes App**
+**MyNotes App**
 
 A clean, efficient, and lightweight Android application built to help users organize their thoughts. This project follows the MVVM (Model-View-ViewModel) architectural pattern to ensure a scalable and maintainable codebase.
 
