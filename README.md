@@ -61,10 +61,6 @@ Model: The Room Database and Repository that handle data logic.
 
 
 
-
-
-
-
 <img src ="https://github.com/user-attachments/assets/b02dcb2e-69a6-4184-ae8c-af3a5c1b43b3" width="350" vspace="30" hspace ="30">
 
 
