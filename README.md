@@ -44,7 +44,6 @@ XML for layout designing
 Lifecycle Management: LiveData & ViewModel
 
 
-
 **Architecture Overview**
 
 
