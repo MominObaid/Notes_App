@@ -22,7 +22,6 @@ Fragment-based Navigation: Optimized for performance and smooth transition.
 **🛠 Tech Stack & Architecture**
 
 
-
 This app is built with Kotlin and follows the Android Jetpack guidelines.
 
 Language: _Kotlin_
